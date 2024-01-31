@@ -37,7 +37,7 @@ router.post('/insert', async (req, res) => {
 router.post('/login', async (req, res) => {
     try {
         const { username, password } = req.body;
-        console.log(username, password)
+        // console.log(username, password)
         const adminuser = await AdminUser.login(username, password);
         if (!adminuser) {
             return res.send({ error: "Login failed! Check authentication credentials", });
