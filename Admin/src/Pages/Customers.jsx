@@ -3,7 +3,7 @@ import { Container } from 'reactstrap'
 import Breadcrumb from "../Common/Breadcrumb"
 import UsersTable from '../Components/HomeContent/UsersTable'
 
-const Users = () => {
+const Customers = () => {
   return (
     <>
       <div className="main-content">
@@ -18,4 +18,4 @@ const Users = () => {
   )
 }
 
-export default Users
+export default Customers

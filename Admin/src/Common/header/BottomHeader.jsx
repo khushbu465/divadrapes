@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { Container, Navbar } from 'reactstrap'
+import { Container } from 'reactstrap'
 
 const BottomHeader = () => {
-
     return (
         <>
             <div className="topnav">
@@ -20,7 +19,6 @@ const BottomHeader = () => {
                                     >
                                         <i className="bx bx-home-circle me-2" />
                                         <span key="t-dashboards">Dashboard</span>
-
                                     </Link>
                                 </li>
                                 <li className="nav-item dropdown">
@@ -32,36 +30,26 @@ const BottomHeader = () => {
                                         <span key="t-apps">Slider</span> <div className="arrow-down" />
                                     </Link>
                                     <div className="dropdown-menu" id="topnav-pages">
-                                        <Link to="/AddBlog" className="dropdown-item" key="t-chat">
-                                            Slider
+                                        <Link to="/Slider" className="dropdown-item" key="t-chat">
+                                            Slider/Banner
                                         </Link>
                                         <Link
-                                            to="/Blog"
-                                            className="dropdown-item"
-                                            key="t-file-manager"
-                                        >
-                                            Banner
-                                        </Link>
+                                        className="nav-link dropdown-toggle arrow-none"
+                                        to="/Brand"
+                                        role="button"
+                                    >
+                                        <span key="t-apps"> Brand</span>
+                                    </Link>
                                     </div>
                                 </li>
                                 <li className="nav-item dropdown">
                                     <Link
                                         className="nav-link dropdown-toggle arrow-none"
-                                        to="/NewJoiners"
+                                        to="/Category"
                                         role="button"
                                     >
                                         <i class="fa-solid fa-layer-group me-2"></i>
                                         <span key="t-apps"> Category</span>
-                                    </Link>
-                                </li>
-                                <li className="nav-item dropdown">
-                                    <Link
-                                        className="nav-link dropdown-toggle arrow-none"
-                                        to="/NewJoiners"
-                                        role="button"
-                                    >
-                                        <i className="bx bx-customize me-2" />
-                                        <span key="t-apps"> Brand</span>
                                     </Link>
                                 </li>
                                 <li className="nav-item dropdown">
@@ -73,11 +61,11 @@ const BottomHeader = () => {
                                         <span key="t-apps">Offers</span> <div className="arrow-down" />
                                     </Link>
                                     <div className="dropdown-menu" id="topnav-pages">
-                                        <Link to="/AddBlog" className="dropdown-item" key="t-chat">
+                                        <Link to="/Offer" className="dropdown-item" key="t-chat">
                                             Offer
                                         </Link>
                                         <Link
-                                            to="/Blog"
+                                            to="/Coupon"
                                             className="dropdown-item"
                                             key="t-file-manager"
                                         >
@@ -97,11 +85,11 @@ const BottomHeader = () => {
                                         <span key="t-apps">Product</span> <div className="arrow-down" />
                                     </Link>
                                     <div className="dropdown-menu" id='topnav-news'>
-                                        <Link to="/AddNews" className="dropdown-item" key="t-chat">
+                                        <Link to="/AddProduct" className="dropdown-item" key="t-chat">
                                             Add Product
                                         </Link>
                                         <Link
-                                            to="/News"
+                                            to="/ViewProduct"
                                             className="dropdown-item"
                                             key="t-file-manager"
                                         >
@@ -112,7 +100,7 @@ const BottomHeader = () => {
                                 <li className="nav-item dropdown">
                                     <Link
                                         className="nav-link dropdown-toggle arrow-none"
-                                        to="/Users"
+                                        to="/Customers"
                                         role="button"
                                     >
                                         <i className="bx bx-user me-2" />

@@ -63,7 +63,7 @@ const Login = () => {
                       </Col>
                       <Col md={4} sm={4} className="col-4 align-self-center ">
                         <img
-                          src="assets/images/logo.png"
+                          src="favicon.jpg"
                           alt=""
                           className="Login_logo"
                         />

@@ -16,9 +16,11 @@ const upload = multer({ storage: storage }).single('slider_img');
 
 router.post('/insert', upload, async (req, res) => {
     try {
+        const { imgtype } = req.body;
+        console.log(imgtype,'typehere')
         const sliderimg = req.file ? `${req.file.filename}` : null;
         // console.log(sliderimg)
-        const newImg = new Slider({ imgUrl: sliderimg });
+        const newImg = new Slider({ imgUrl: sliderimg, imgtype: imgtype });
         const savedImg = await newImg.save();
         if (!savedImg) {
             return res.send({

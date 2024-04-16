@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import BottomHeader from './BottomHeader';
-import Language from './Language';
 import Swal from 'sweetalert2';
 
 // import MegaMenu from './MegaMenu';
@@ -80,20 +79,18 @@ const Header = () => {
                         <div className="navbar-brand-box ">
                             <Link to="/Dashboard" className="logo logo-light ">
                                 <span className="logo-sm">
-                                    <img src="assets/images/flogo.png" alt="" height={30} />
+                                    <img src="/assets/images/logo.png" alt="" height={30} />
                                 </span>
                                 <span className="logo-lg">
-                                    <img src="assets/images/darklogo.png" alt="" height={50} />
+                                    <img src="/assets/images/logo.png" alt="" height={50} />
                                 </span>
                             </Link>
                         </div>
                         <div className="schoolname">
                             <Link to="/Dashboard">
-                                <h3>St Mary's Convent Inter College</h3>
-                                <h5>Old Students' Association</h5>
+                                <h3><i>Diva<span className='text-light'>Drapes</span></i></h3>
                             </Link>
                         </div>
-
                         <button
                             type="button"
                             className="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light"
@@ -105,7 +102,6 @@ const Header = () => {
                         {/* <MegaMenu/> */}
                     </div>
                     <div className="d-flex">
-                        <Language />
                         <div className="dropdown d-none d-lg-inline-block ms-1">
                             <button
                                 type="button"

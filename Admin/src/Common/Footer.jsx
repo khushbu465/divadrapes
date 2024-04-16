@@ -8,7 +8,7 @@ const Footer = () => {
             <footer className="footer">
                 <Container fluid={true}>
                     <Row>
-                        <Col sm={6}>© OSASMCICLKO</Col>
+                        <Col sm={6}>© DivaDrapes</Col>
                         <Col sm={6}>
                             <div className="text-sm-end d-none d-sm-block">
                                 Powered by - <Link to="https://onebigbit.com/" target='_blank'>OneBigBit Technologies Private Limited </Link>

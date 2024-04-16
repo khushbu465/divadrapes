@@ -1,6 +1,6 @@
 @import url(../../../../css);
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 /* body{
    background-color: ;
     background-image: url('https://saknyskarcios.lt/img/662ac5c293f41c4fee305ac803597410.jpg');
@@ -21,7 +21,17 @@
 .login_Pageform input:focus {
     border: 1px solid #fff !important;
 }
-
+.img_box{
+    overflow: hidden;
+}
+.img_box img{
+    height: 60px;
+    width: 60px;
+    background: #d9fefc;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    /* object-fit: cover; */
+}
 .login_Pageform ::placeholder {
     color: #fff !important;
 }
@@ -128,14 +138,14 @@
 
 .mini-stats-wid {
     border-radius: 8px 20px 8px 20px;
-    background: rgba(244, 44, 83, 0.2);
+    background: rgba(244, 44, 83, 0.6);
     /* background: linear-gradient(to right, rgba(244, 44, 83, 0.5) 20%, rgba(255, 255, 255, .8) 100%) !important; */
     transition: transform 0.3s ease-in-out;
 }
 
 .mini-stats-wid:hover {
     transform: scale(1.06);
-    background: rgba(244, 44, 83, 0.5);
+    background: rgba(244, 44, 83, 0.9);
 }
 
 .mini-stats-wid .bgcolorone {
@@ -5672,15 +5682,19 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 }
 
 .schoolname {
-    padding-top: 16px;
+    padding-top: 26px;
 }
 
 .schoolname h3 {
-    font-size: 20px;
-    color: #fff;
+    font-family: "Dancing Script", cursive;
+    font-size: 40px;
+    color: var(--main_color);
     line-height: 1rem;
+    filter: brightness(1.8);
 }
-
+.schoolname h3 i span{
+    font-size: 32px;
+}
 .schoolname h5 {
     color: #f9ea1b;
 }

@@ -25,7 +25,6 @@ const offers = require('./routes/offers');
 const categories = require('./routes/categories');
 const contacts = require('./routes/contacts');
 const brands = require('./routes/brands');
-const banners = require('./routes/banners');
 const coupons = require('./routes/coupons');
 
 app.use("/adminuser", adminusers);
@@ -36,7 +35,6 @@ app.use("/offer", offers);
 app.use("/category", categories);
 app.use("/contact", contacts);
 app.use("/brand", brands);
-app.use("/banner", banners);
 app.use("/coupon", coupons);
 
 // Error handling middleware
