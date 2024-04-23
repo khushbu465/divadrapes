@@ -4,13 +4,16 @@ import Breadcrumb from "../../Common/Breadcrumb"
 import { Card, Row, Col, CardBody } from "reactstrap";
 import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom';
+import SliderTable from './SliderTable';
 
 
 const Slider = () => {
     const refFrom = useRef(null);
     const [slider_img, setSlider_img] = useState();
     const [imgtype, setImgtype] = useState('');
-    const [newData, setnewData] = useState([]);
+    const [bannerdata, setBannerdata] = useState([]);
+    const [sliderData, setSliderData] = useState([]);
+
     const Url = process.env.REACT_APP_BASE_URL;
     useEffect(() => {
         fetchImages();
@@ -52,8 +55,10 @@ const Slider = () => {
         try {
             const response = await fetch(`${Url}/slider/getall`);
             const results = await response.json();
-            console.log(results, 'results')
-            setnewData([...results].reverse());
+            const sliderdatas = results.filter(item => item.imgtype === 'slider');
+            setSliderData([...sliderdatas].reverse());
+            const bannerdatas = results.filter(item => item.imgtype === 'banner');
+            setBannerdata([...bannerdatas].reverse());
         } catch (err) {
             console.log(err, 'images fetching error')
         }
@@ -91,36 +96,7 @@ const Slider = () => {
                                                 </form>
                                             </div>
                                             <hr />
-                                            <div className="table-responsive scrollableTable">
-                                                <Table className="table align-middle table-nowrap  w-100 mb-0 table-bordered table-hover  usersTables">
-                                                    <thead className="table-light">
-                                                        <tr>
-                                                            <th>S.N</th>
-                                                            <th className="align-middle">Image</th>
-                                                            <th className="align-middle">Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        {newData && newData.length > 0 ? (
-                                                            newData.map((data, idx) =>
-                                                                data.imgtype === 'slider' ? <tr key={idx}>
-                                                                    <td>{idx + 1}</td>
-                                                                    <td>
-                                                                        <div className="img_box">
-                                                                            <img src={`${Url}/uploads/${data.imgUrl}`} alt="" />
-                                                                        </div>
-                                                                    </td>
-                                                                    <td><Link to={''} class="text-danger p-1"><i class="bx bxs-trash"></i></Link>
-                                                                    </td>
-                                                                </tr> : ''
-                                                            )
-                                                        ) : (
-                                                            ''
-                                                        )
-                                                        }
-                                                    </tbody>
-                                                </Table>
-                                            </div>
+                                            <SliderTable Alldata={sliderData} />
                                         </CardBody>
                                     </Card>
                                 </Col>
@@ -149,36 +125,7 @@ const Slider = () => {
                                                 </form>
                                             </div>
                                             <hr />
-                                            <div className="table-responsive scrollableTable">
-                                                <Table className="table align-middle table-nowrap  w-100 mb-0 table-bordered table-hover  usersTables">
-                                                    <thead className="table-light">
-                                                        <tr>
-                                                            <th>S.N</th>
-                                                            <th className="align-middle">Image</th>
-                                                            <th className="align-middle">Action</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        {newData && newData.length > 0 ? (
-                                                            newData.map((data, idx) =>
-                                                                data.imgtype === 'banner' ? <tr key={idx}>
-                                                                    <td>{idx + 1}</td>
-                                                                    <td>
-                                                                        <div className="img_box">
-                                                                            <img src={`${Url}/uploads/${data.imgUrl}`} alt="" />
-                                                                        </div>
-                                                                    </td>
-                                                                    <td><Link to={''} class="text-danger p-1"><i class="bx bxs-trash"></i></Link>
-                                                                    </td>
-                                                                </tr> : ''
-                                                            )
-                                                        ) : (
-                                                            ''
-                                                        )
-                                                        }
-                                                    </tbody>
-                                                </Table>
-                                            </div>
+                                            <SliderTable Alldata={bannerdata} />
                                         </CardBody>
                                     </Card>
                                 </Col>
@@ -187,6 +134,7 @@ const Slider = () => {
                     </div>
                 </div>
             </div>
+            
         </>
     )
 }
