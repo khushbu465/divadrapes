@@ -53,7 +53,7 @@ const Slider = () => {
     };
     const fetchImages = async () => {
         try {
-            const response = await fetch(`${Url}/slider/getall`);
+            const response = await fetch(`${Url}/sliders/getall`);
             const results = await response.json();
             const sliderdatas = results.filter(item => item.imgtype === 'slider');
             setSliderData([...sliderdatas].reverse());
@@ -134,7 +134,7 @@ const Slider = () => {
                     </div>
                 </div>
             </div>
-            
+
         </>
     )
 }

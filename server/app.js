@@ -28,13 +28,13 @@ const brands = require('./routes/brands');
 const coupons = require('./routes/coupons');
 
 app.use("/adminuser", adminusers);
-app.use("/slider", sliders);
-app.use("/product", products);
-app.use("/customer", customers);
-app.use("/offer", offers);
-app.use("/category", categories);
-app.use("/contact", contacts);
-app.use("/brand", brands);
+app.use("/sliders", sliders);
+app.use("/products", products);
+app.use("/customers", customers);
+app.use("/offers", offers);
+app.use("/categories", categories);
+app.use("/contacts", contacts);
+app.use("/brands", brands);
 app.use("/coupon", coupons);
 
 // Error handling middleware

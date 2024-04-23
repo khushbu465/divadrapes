@@ -1,12 +1,14 @@
 @import url(../../../../css);
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
 /* body{
    background-color: ;
     background-image: url('https://saknyskarcios.lt/img/662ac5c293f41c4fee305ac803597410.jpg');
 } */
 :root {
     --main_color: #e32c53;
+    --main_font: "Poppins", sans-serif;
 }
 
 .login_Pageform label {
@@ -21,17 +23,21 @@
 .login_Pageform input:focus {
     border: 1px solid #fff !important;
 }
-.img_box{
+
+.img_box {
     overflow: hidden;
 }
-.img_box img{
+
+.img_box img {
     height: 60px;
     width: 60px;
     background: #d9fefc;
     border-radius: 10px;
+    cursor: pointer;
     border: 1px solid lightgray;
     /* object-fit: cover; */
 }
+
 .login_Pageform ::placeholder {
     color: #fff !important;
 }
@@ -126,7 +132,19 @@
     border-radius: var(--bs-border-radius-lg);
 }
 
+.images_here_style {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 
+}
+
+.images_here_style img {
+    height: 200px;
+    width: 100%;
+    cursor: pointer;
+}
 
 .card {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -5686,15 +5704,17 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 }
 
 .schoolname h3 {
-    font-family: "Dancing Script", cursive;
-    font-size: 40px;
+    font-family: var(--main_font);
+    font-size: 30px;
     color: var(--main_color);
     line-height: 1rem;
     filter: brightness(1.8);
 }
-.schoolname h3 i span{
+
+.schoolname h3 i span {
     font-size: 32px;
 }
+
 .schoolname h5 {
     color: #f9ea1b;
 }

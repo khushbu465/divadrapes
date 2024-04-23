@@ -88,7 +88,7 @@ const Header = () => {
                         </div>
                         <div className="schoolname">
                             <Link to="/Dashboard">
-                                <h3><i>Diva<span className='text-light'>Drapes</span></i></h3>
+                                <h3>Diva<span className='text-light'>Drapes</span></h3>
                             </Link>
                         </div>
                         <button

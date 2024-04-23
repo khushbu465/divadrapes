@@ -46,6 +46,15 @@ router.get('/getall', async (req, res) => {
         console.log(err, 'server error');
     }
 });
+router.get('/getBy_id/:id', async (req, res) => {
+    try {
+        const s_id = req.params.id;
+        const allImg = await Slider.findById(s_id);
+        const result = res.json(allImg);
+    } catch (err) {
+        console.log(err, 'server error');
+    }
+});
 router.put('/update/:id', upload, async (req, res) => {
     try {
         const id = req.params.id;
